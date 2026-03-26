@@ -146,7 +146,7 @@ function App() {
       : `NGO pitch expert. Question: "${q.label}". Answer: "${current}". Precise enough to convince a funder? JSON only, no markdown: {"ok":true,"feedback":"max 2 sentences en"}`;
     try {
       const res = await fetch("https://api.anthropic.com/v1/messages",{
-        method:"POST",headers:{"Content-Type":"application/json"},
+        method:"POST",headers:{"Content-Type":"application/json"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},
         body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:300,messages:[{role:"user",content:prompt}]})
       });
       const data = await res.json();
@@ -180,7 +180,7 @@ function App() {
       : `NGO/social enterprise fundraising expert. Generate a powerful English pitch deck for funders. Info: ${JSON.stringify(answers)}. Reply ONLY in valid JSON without markdown: {"org":"","tagline":"short punchy tagline","slides":[{"title":"","type":"cover","content":"detailed text","keyPoints":["","",""],"stat":{"value":"figure","label":"context"}}]}. Generate exactly 10 varied slides: cover, problem, solution, impact, model, team, ask, vision, differentiator, closing. Rich, convincing content.`;
     try {
       const res = await fetch("https://api.anthropic.com/v1/messages",{
-        method:"POST",headers:{"Content-Type":"application/json"},
+        method:"POST",headers:{"Content-Type":"application/json"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},
         body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:4000,messages:[{role:"user",content:prompt}]})
       });
       const data = await res.json();
